@@ -1,18 +1,13 @@
 <div class="container">
+
   <div class="row">
-    <div class="col s6">test</div>
-    
-  </div>
-</div>
-
-
-
-
-
-<div class="container">
-  <div class="row">
+    <div class="col s6">
+      <h2>About me</h2>
+        <p>Hi, I'm Jennifer. Welcome to my blog. I love working in Ruby - it's my favorite language. My new motto is a code apple a day, keeps synaptic pruning away.</p>
+        <%= link_to 'New article', new_article_path %>
+    </div>
+ 
   <div class="col s6">
-  <%= link_to 'New article', new_article_path %>
   <table class="highlight responsive-table">
     <tr>
       <th>Title</th>
@@ -30,10 +25,10 @@
                   method: :delete,
                   data: { confirm: 'Are you sure?' } %></td>
         </tr>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-</div>
+    </div>
   </div>
   </table>
 </div>
