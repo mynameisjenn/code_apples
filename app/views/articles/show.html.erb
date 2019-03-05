@@ -1,32 +1,38 @@
 <div class="container">
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+  <p >
+    <strong><h3><%= @article.title %></h3></strong>
+  </p>
+
+  <p>
+    <%= @article.created_at.strftime("%b %d, %Y") %>
+  </p>
  
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+  <p>
+    <%= @article.text %>
+  </p>
+
+ <hr> 
  
-<h2>Comments</h2>
 <%= render @article.comments %>
  
-<h2>Add a comment:</h2>
+<h6>Penny for your thoughts...</h6>
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
   <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
   </p>
   <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.label :kindness %><br>
+    <%= form.text_area :kindness %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit :share %>
   </p>
 <% end %>
  
 <%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Back', articles_path %> |
+<%= link_to 'Delete', article_path(@article),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
 </div>
