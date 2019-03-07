@@ -1,11 +1,15 @@
 <div>
 	<p>
 	  <strong>Human :: </strong>
-	  <%= comment.commenter %>
+	  <%= comment.name %>
 	</p>
 	 
 	<p>
 	  <strong>says :: </strong>
 	  <%= comment.body %>
 	</p>
-</div
+</div>
+
+<%= link_to 'Delete', [comment.article, comment],
+					method: :delete,
+					data: { confirm: 'Are you sure?' } %>
