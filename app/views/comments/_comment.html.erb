@@ -1,4 +1,8 @@
 <div>
+
+	<p><strong>On :: </strong>
+		<%= comment.format_time %>
+	</p>
 	<p>
 	  <strong>Human :: </strong>
 	  <%= comment.name %>
@@ -8,6 +12,8 @@
 	  <strong>says :: </strong>
 	  <%= comment.body %>
 	</p>
+
+
 </div>
 
 <%= link_to 'Delete', [comment.article, comment],

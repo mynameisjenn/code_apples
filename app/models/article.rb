@@ -4,7 +4,7 @@ class Article < ApplicationRecord
 					  length: { minimum: 5 }
 
   	def format_time
-  		created_at.strftime("%b %d, %Y")
+  		created_at.strftime("%d.%m.%y")
   	end
 
 end
