@@ -1,5 +1,5 @@
 <div class="container">
-  <p >
+  <p>
     <strong><h3><%= @article.title %></h3></strong>
   </p>
 
@@ -15,24 +15,27 @@
  
 <%= render @article.comments %>
  
-<h6>Penny for your thoughts...</h6>
-<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit :submit %>
-  </p>
-<% end %>
- 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %> |
-<%= link_to 'Delete', article_path(@article),
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
+ <div class="comments">
+    <h6>Penny for your thoughts...</h6>
+    <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+        <p>
+          <%= form.label :name %><br>
+          <%= form.text_field :name %>
+        </p>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body %>
+        </p>
+        <p>
+          <%= form.submit :submit %>
+      </p>
+    <% end %>
+     
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Back', articles_path %> |
+    <%= link_to 'Delete', article_path(@article),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+  </div>
+  
 </div>

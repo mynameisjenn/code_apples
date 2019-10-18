@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/index' => 'welcome#index'
   get '/about' => 'welcome#about'
   get '/contact' => 'welcome#contact'
+  get '/resume' => 'welcome#resume'
 
   resources :articles do 
   	resources :comments
